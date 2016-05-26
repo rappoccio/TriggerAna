@@ -28,7 +28,6 @@ TriggerAnaPlugin::TriggerAnaPlugin(edm::ParameterSet const& cfg)
   processName_       = cfg.getParameter<std::string>               ("processName");
   triggerNames_      = cfg.getParameter<std::vector<std::string> > ("triggerName");
   triggerResultsTag_ = cfg.getParameter<edm::InputTag>             ("triggerResults");
-  triggerEventTag_   = cfg.getParameter<edm::InputTag>             ("triggerEvent");
 
   event_ = 0;
   run_ = 0;
@@ -122,11 +121,6 @@ void TriggerAnaPlugin::analyze(edm::Event const& event, edm::EventSetup const& i
   event.getByLabel(triggerResultsTag_,triggerResultsHandle_);
   if (!triggerResultsHandle_.isValid()) {
     cout << "TriggerAnaPlugin::analyze: Error in getting TriggerResults product from Event!" << endl;
-    return;
-  }
-  event.getByLabel(triggerEventTag_,triggerEventHandle_);
-  if (!triggerEventHandle_.isValid()) {
-    cout << "TriggerAnaPlugin::analyze: Error in getting TriggerEvent product from Event!" << endl;
     return;
   }
 
