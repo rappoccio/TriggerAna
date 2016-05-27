@@ -45,8 +45,6 @@ class TriggerAnaPlugin : public edm::EDAnalyzer
   std::vector<std::string> triggerList_; 
   std::vector<int>         L1Prescales_;
   std::vector<int>         HLTPrescales_;
-
-
 };
 
 #endif

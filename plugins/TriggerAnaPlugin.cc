@@ -162,6 +162,7 @@ void TriggerAnaPlugin::analyze(edm::Event const& event, edm::EventSetup const& i
 
     }// if the trigger exists in the menu
     //cout<<triggerNames_[itrig]<<" "<<triggerIndex_[itrig]<<" "<<accept<<" "<<tmpFired<<endl;
+    triggerList_.push_back( triggerNames_[itrig] );
     Fired_.push_back(tmpFired);
     L1Prescales_.push_back(preL1);
     HLTPrescales_.push_back(preHLT);

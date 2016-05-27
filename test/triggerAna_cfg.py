@@ -4,8 +4,8 @@ process = cms.Process("Ana")
 process.load('FWCore.MessageService.MessageLogger_cfi')
 ##-------------------- Communicate with the DB -----------------------
 process.load('Configuration.StandardSequences.Services_cff')
-process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-process.GlobalTag.globaltag = 'FT_53_V21_AN6::All'
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff")
+process.GlobalTag.globaltag = '74X_dataRun2_Prompt_v0'
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
 process.load('Configuration.Geometry.GeometryIdeal_cff')
 process.load('RecoJets.Configuration.RecoPFJets_cff')
@@ -28,7 +28,7 @@ process.load('RecoMET.METFilters.ecalLaserCorrFilter_cfi')
 
 #############   Set the number of events #############
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
+    input = cms.untracked.int32(1000)
 )
 #############   Format MessageLogger #################
 process.MessageLogger.cerr.FwkReport.reportEvery = 10000
@@ -36,18 +36,14 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 10000
 process.source = cms.Source("PoolSource",
 #    fileNames = cms.untracked.vstring('/store/data/Run2012C/JetHT/AOD/PromptReco-v2/000/198/941/221BEAC8-7ACF-E111-8A3D-E0CB4E4408E7.root')
    fileNames = cms.untracked.vstring(
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/263D331F-AF27-E511-969B-02163E012627.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/52F74C29-AF27-E511-BAA1-02163E01358B.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/583CFB34-AF27-E511-8639-02163E0135AC.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/8A22C61F-AF27-E511-B6BF-02163E012620.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/8C85BC1E-AF27-E511-9E2D-02163E012AA4.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/9604D91E-AF27-E511-8C5A-02163E014166.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/AA9FA822-AF27-E511-BCD7-02163E0133A4.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/B28F4A1F-AF27-E511-8471-02163E0135C9.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/B2B3821D-AF27-E511-A054-02163E01267F.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/CCF39221-AF27-E511-82FB-02163E0142FD.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/D231F61F-AF27-E511-97A9-02163E013432.root',
-'/store/data/Run2015B/JetHT/MINIAOD/PromptReco-v1/000/251/252/00000/F8295A1B-AF27-E511-89C2-02163E014289.root',       
+       'file:0284BF02-7E2A-E511-84C4-02163E014558.root'
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/0284BF02-7E2A-E511-84C4-02163E014558.root',
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/042169B9-7E2A-E511-B1F2-02163E0121CD.root',
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/08C090E9-7E2A-E511-833D-02163E012603.root',
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/12D7BD8F-7B2A-E511-8C04-02163E011CD7.root',
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/1686AB47-7D2A-E511-AB6D-02163E01463E.root',
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/1E7146E6-822A-E511-A2EB-02163E014166.root',
+#'/store/data/Run2015B/JetHT/AOD/PromptReco-v1/000/251/562/00000/20B2CEEA-7B2A-E511-B90E-02163E0140DC.root',
        )
 )
 ############# processed tree producer ##################
