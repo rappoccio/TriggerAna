@@ -15,7 +15,7 @@ config.Data.inputDataset = '/JetHT/Run2015B-PromptReco-v1/AOD'
 config.Data.splitting = 'LumiBased'
 config.Data.lumiMask = 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions15/13TeV/Cert_246908-251252_13TeV_PromptReco_Collisions15_JSON.txt'
 config.Data.unitsPerJob = 100
-config.Data.ignoreLocality = False
+config.Data.ignoreLocality = True
 config.Data.publication = False
 # This string is used to construct the output dataset name
 #config.Data.publishDBS = 'phys03'
